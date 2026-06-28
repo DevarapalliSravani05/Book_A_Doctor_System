@@ -1,0 +1,69 @@
+.doctor-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    height:100%;
+}
+
+.doctor-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+}
+
+.doctor-header{
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+    text-align:center;
+    padding:35px;
+    position:relative;
+}
+
+.doctor-header img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+}
+
+.status-badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:#22c55e;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.doctor-body{
+    padding:25px;
+    text-align:center;
+}
+
+.doctor-body h3{
+    font-weight:700;
+}
+
+.doctor-body h6{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.rating{
+    color:#f59e0b;
+    margin-bottom:15px;
+}
+
+.rating span{
+    color:#666;
+    margin-left:6px;
+}
+
+.doctor-body h4{
+    color:#16a34a;
+    font-weight:bold;
+}

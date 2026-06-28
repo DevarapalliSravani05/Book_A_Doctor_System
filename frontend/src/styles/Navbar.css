@@ -1,0 +1,178 @@
+body{
+    padding-top:90px;
+}
+
+.premium-navbar{
+
+    background:rgba(13,110,253,.92);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+    padding:14px 0;
+
+    transition:.4s;
+}
+
+.brand-logo{
+
+    color:white !important;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    text-decoration:none;
+}
+
+.nav-link-custom{
+
+    color:white !important;
+
+    margin:0 15px;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.nav-link-custom::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:3px;
+
+    background:white;
+
+    transition:.35s;
+
+    border-radius:10px;
+}
+
+.nav-link-custom:hover::after{
+
+    width:100%;
+}
+
+.nav-link-custom.active{
+
+    font-weight:bold;
+}
+
+.nav-link-custom.active::after{
+
+    width:100%;
+}
+
+.user-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:white;
+
+    background:rgba(255,255,255,.15);
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+.logout-btn{
+
+    background:#ffc107 !important;
+
+    border:none !important;
+
+    color:#000 !important;
+
+    border-radius:30px !important;
+
+    padding:10px 22px !important;
+
+    font-weight:600 !important;
+
+    transition:.3s;
+}
+
+.logout-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+/* ===========================
+   Brand
+=========================== */
+
+.brand-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    text-decoration:none;
+}
+
+.brand-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.brand-text{
+
+    display:flex;
+    flex-direction:column;
+
+    line-height:1.1;
+}
+
+.brand-text span{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:800;
+}
+
+.brand-text small{
+
+    color:#BFDBFE;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+}

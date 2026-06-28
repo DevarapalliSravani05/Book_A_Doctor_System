@@ -1,0 +1,27 @@
+.service-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    height:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.2);
+}
+
+.service-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.service-icon{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.service-card h4{
+    font-weight:700;
+}
