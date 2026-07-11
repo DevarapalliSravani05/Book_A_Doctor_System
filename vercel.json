@@ -1,16 +1,8 @@
 {
-  "services": [
-    {
-      "source": "frontend/**",
-      "destination": "frontend/"
-    },
-    {
-      "source": "backend/**", 
-      "destination": "backend/"
-    }
-  ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/api/$1" },
-    { "source": "/(.*)", "destination": "/frontend/$1" }
+    { "source": "/api/(.*)", "destination": "/backend/server.js" },
+    { "source": "/(.*)", "destination": "/frontend/dist/$1" }
   ]
 }
