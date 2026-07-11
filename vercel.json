@@ -6,8 +6,7 @@
     },
     "backend": {
       "root": "backend",
-      "runtime": "node",
-      "entrypoint": "server.js"
+      "runtime": "node"
     }
   },
   "rewrites": [
