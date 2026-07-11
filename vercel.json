@@ -7,7 +7,7 @@
     "backend": {
       "root": "backend",
       "runtime": "node",
-      "handler": "server.js"
+      "entrypoint": "server.js"
     }
   },
   "rewrites": [
