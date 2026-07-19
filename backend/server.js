@@ -18,7 +18,8 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // Local development
+      "http://localhost:5173", 
+      "https://book-a-doctor-system-e33j-r9ratemfr-sravs5.vercel.app"// Local development
     ],
     credentials: true,
   })
