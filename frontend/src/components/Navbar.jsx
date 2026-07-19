@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { FaUserCircle, FaSignOutAlt, FaHospital } from "react-icons/fa";
-import "../styles/navbar.css";
+import "../styles/Navbar.css";
 
 function CustomNavbar() {
   const navigate = useNavigate();
