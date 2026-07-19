@@ -1,328 +1,372 @@
-Book A Doctor System
+# 🩺 Book A Doctor - Doctor Appointment Management System
 
-GitHub Repository: https://github.com/DevarapalliSravani05/Book_A_Doctor_System
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![Express](https://img.shields.io/badge/API-Express-black)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Cloudinary](https://img.shields.io/badge/Image%20Storage-Cloudinary-blueviolet)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel-black)
+![Render](https://img.shields.io/badge/Deployment-Render-purple)
 
----
+A full-stack **Doctor Appointment Booking System** developed using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 
-1. Introduction
-
-Project Title
-
-Book A Doctor System
-
-Team Members
-
-Name| Role
-Devarapalli Sravani| Full Stack Developer (Frontend, Backend, Database Integration, Testing & Documentation)
+The application allows patients to search doctors, view doctor profiles, and book appointments. It also provides doctor and admin management features with secure authentication.
 
 ---
 
-2. Project Overview
+# 🚀 Live Demo
 
-Purpose
+## Frontend
 
-The Book A Doctor System is a full-stack web application that simplifies the process of booking medical appointments online. It enables patients to search for doctors, schedule appointments, and manage their bookings efficiently, while allowing doctors and administrators to manage appointments and user information.
+https://book-a-doctor-system-e33j-r9ratemfr-sravs5.vercel.app
 
-The primary goal of this project is to provide an easy-to-use, secure, and responsive healthcare appointment management system.
+## Backend API
 
-Features
-
-- User Registration and Login
-- Secure Authentication
-- Doctor Listing
-- Search Doctors
-- Book Appointments
-- Appointment Management
-- Patient Dashboard
-- Doctor Dashboard
-- Admin Dashboard
-- Responsive User Interface
-- MongoDB Database Integration
+https://book-a-doctor-system.onrender.com
 
 ---
 
-3. Architecture
+# 📌 Features
 
-Frontend
+## 👤 Patient Features
 
-The frontend is developed using React.js.
+- User registration and login
+- JWT-based authentication
+- Browse available doctors
+- Search doctors by specialization
+- View doctor details
+- Book appointments
+- View appointment history
+- Manage profile
 
-Responsibilities
+---
 
-- User Interface
-- Routing
-- API Communication
-- Authentication Pages
-- Appointment Booking Pages
-- Dashboard Components
+## 👨‍⚕️ Doctor Features
 
-Technologies Used
+- Doctor profile management
+- View appointment requests
+- Manage availability status
+- View patient appointment details
+
+---
+
+## 👨‍💼 Admin Features
+
+- Admin authentication
+- Add new doctors
+- Update doctor information
+- Delete doctors
+- Manage users
+- Manage appointments
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
 
 - React.js
-- React Router
+- JavaScript (ES6+)
+- HTML5
+- CSS3
 - Axios
-- Bootstrap / CSS
-- React Hooks
+- React Router
 
----
-
-Backend
-
-The backend is built using Node.js and Express.js.
-
-Responsibilities
-
-- REST API Development
-- Authentication
-- Business Logic
-- Appointment Processing
-- Doctor Management
-- User Management
-- Database Operations
-
-Technologies Used
+## Backend
 
 - Node.js
 - Express.js
+- REST API
 - JWT Authentication
-- bcrypt
-- Mongoose
+- Middleware
 
----
+## Database
 
-Database
-
-MongoDB is used as the primary database.
-
-Collections include:
-
-- Users
-- Doctors
-- Appointments
-- Admin
-
-Database interactions are performed using Mongoose.
-
----
-
-4. Setup Instructions
-
-Prerequisites
-
-Install the following software:
-
-- Node.js
-- npm
 - MongoDB
-- Git
+- Mongoose ODM
+
+## Cloud Services
+
+- MongoDB Atlas
+- Cloudinary
+- Render
+- Vercel
 
 ---
 
-Installation
+# 🏗️ System Architecture
 
-Step 1
 
-Clone the repository
-
-git clone https://github.com/DevarapalliSravani05/Book_A_Doctor_System.git
-
-Step 2
-
-Navigate to the project
-
-cd Book_A_Doctor_System
-
-Step 3
-
-Install frontend dependencies
-
-cd client
-npm install
-
-Step 4
-
-Install backend dependencies
-
-cd ../server
-npm install
-
-Step 5
-
-Create a ".env" file inside the server folder.
-
-Example:
-
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+```
+                  User
+                    |
+                    |
+            React Frontend
+                    |
+                    |
+              Axios API Calls
+                    |
+                    |
+            Express.js Server
+                    |
+      --------------------------------
+      |              |               |
+ User Routes   Doctor Routes   Appointment Routes
+      |              |               |
+      --------------------------------
+                    |
+              MongoDB Database
+                    |
+              Mongoose ODM
+```
 
 ---
 
-5. Folder Structure
+# 🔄 Application Workflow
 
-Book_A_Doctor_System
+1. User opens the React application.
+2. User registers or logs into the system.
+3. Authentication is handled using JWT tokens.
+4. Frontend communicates with backend using REST APIs.
+5. Express.js processes user requests.
+6. MongoDB stores and retrieves application data.
+7. Users can search doctors and book appointments.
+8. Admin manages doctors and appointments.
+
+---
+
+# 📂 Project Structure
+
+```
+book-a-doctor-system
+
 │
-├── client
-│   ├── public
+├── frontend
+│   │
 │   ├── src
-│   │   ├── Components
-│   │   ├── Pages
-│   │   ├── Context
-│   │   ├── Services
-│   │   ├── App.js
-│   │   └── index.js
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   │
+│   └── package.json
 │
-├── server
-│   ├── Controllers
-│   ├── Models
-│   ├── Routes
-│   ├── Middleware
-│   ├── Config
+├── backend
+│   │
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
 │   ├── server.js
 │   └── package.json
 │
-├── README.md
-└── package.json
+├── screenshots
+│
+└── README.md
+```
 
 ---
 
-6. Running the Application
+# 🗄️ Database Design
 
-Start Backend
+The project uses MongoDB with three main collections.
 
-cd server
+## User Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "name": "User Name",
+  "email": "user@gmail.com",
+  "password": "encrypted password",
+  "role": "patient"
+}
+```
+
+---
+
+## Doctor Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "name": "Dr. Name",
+  "specialization": "Cardiologist",
+  "experience": 12,
+  "consultationFee": 700,
+  "hospital": "Apollo Hospital",
+  "image": "cloudinary URL",
+  "available": true
+}
+```
+
+---
+
+## Appointment Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "userId": "User ObjectId",
+  "doctorId": "Doctor ObjectId",
+  "date": "2026-07-20",
+  "time": "10:30 AM",
+  "status": "confirmed"
+}
+```
+
+---
+
+# 🔗 Database Relationship
+
+```
+User (1)
+   |
+   |
+   | books
+   |
+   |
+Appointment
+   |
+   |
+   | belongs to
+   |
+Doctor (1)
+```
+
+Relationship:
+
+```
+User 1 -------- Many Appointments
+
+Doctor 1 ------ Many Appointments
+```
+
+---
+
+# 🔌 API Documentation
+
+## User APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/users/register | Register user |
+| POST | /api/users/login | Login user |
+
+---
+
+## Doctor APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/doctors | Get all doctors |
+| POST | /api/doctors | Add doctor |
+| PUT | /api/doctors/:id | Update doctor |
+| DELETE | /api/doctors/:id | Delete doctor |
+
+---
+
+## Appointment APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/appointments | Create appointment |
+| GET | /api/appointments | Get appointments |
+| PUT | /api/appointments/:id | Update appointment |
+| DELETE | /api/appointments/:id | Cancel appointment |
+
+---
+
+# ⚙️ Installation and Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/book-a-doctor-system.git
+```
+
+---
+
+# Backend Setup
+
+Navigate to backend:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create `.env` file:
+
+```
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
+CLOUDINARY_NAME=your_cloud_name
+
+CLOUDINARY_API_KEY=your_api_key
+
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+Run backend:
+
+```bash
 npm start
-
-Server runs on:
-
-http://localhost:5000
+```
 
 ---
 
-Start Frontend
+# Frontend Setup
 
-cd client
-npm start
+Navigate to frontend:
 
-Frontend runs on:
+```bash
+cd frontend
+```
 
-http://localhost:3000
+Install dependencies:
 
----
+```bash
+npm install
+```
 
-7. API Documentation
+Run application:
 
-Authentication
-
-Register
-
-POST /api/users/register
-
-Request
-
-{
-  "name":"John",
-  "email":"john@example.com",
-  "password":"123456"
-}
-
-Response
-
-{
-  "success": true,
-  "message": "User Registered Successfully"
-}
+```bash
+npm run dev
+```
 
 ---
 
-Login
+# 🔐 Authentication
 
-POST /api/users/login
+Security features:
 
-Request
+- JWT authentication
+- Password encryption
+- Protected routes
+- Role-based authorization
 
-{
-  "email":"john@example.com",
-  "password":"123456"
-}
+User Roles:
 
-Response
-
-{
-  "token":"JWT_TOKEN"
-}
+- Patient
+- Doctor
+- Admin
 
 ---
 
-Doctors
-
-Get All Doctors
-
-GET /api/doctors
-
----
-
-Get Doctor by ID
-
-GET /api/doctors/:id
-
----
-
-Appointments
-
-Book Appointment
-
-POST /api/appointments/book
-
----
-
-Get User Appointments
-
-GET /api/appointments/user
-
----
-
-Cancel Appointment
-
-DELETE /api/appointments/:id
-
----
-
-8. Authentication
-
-Authentication is implemented using JSON Web Tokens (JWT).
-
-Process
-
-1. User registers.
-2. Password is encrypted using bcrypt.
-3. User logs in.
-4. Server generates JWT Token.
-5. Token is stored on the client.
-6. Every protected API request includes the token.
-7. Middleware verifies the token before granting access.
-
-Authorization ensures:
-
-- Patients access only their appointments.
-- Doctors manage their schedules.
-- Admin has complete system access.
-
----
-
-9. User Interface
-
-The application contains:
-
-- Home Page
-- Login Page
-- Registration Page
-- Doctor Listing Page
-- Book Appointment Page
-- User Dashboard
-- Doctor Dashboard
-- Admin Dashboard
-
+# 📸 Screenshots
 
 <img width="960" height="540" alt="Screenshot 2026-07-08 210304" src="https://github.com/user-attachments/assets/57f8a3e6-f24b-4636-9932-f2e91a9bb273" />
 <img width="960" height="540" alt="Screenshot 2026-07-08 210418" src="https://github.com/user-attachments/assets/25c35caf-0438-4fb1-8856-8157216f3177" />
@@ -330,65 +374,46 @@ The application contains:
 <img width="960" height="540" alt="Screenshot 2026-07-08 210542" src="https://github.com/user-attachments/assets/b32b0577-c646-47e1-b2d0-130170790547" />
 <img width="960" height="540" alt="Screenshot 2026-07-08 210644" src="https://github.com/user-attachments/assets/ebe01556-feff-4170-8423-93ed780300dc" />
 
-10. Testing
+---
 
-Testing includes:
+# ✨ Project Highlights
 
-- API Testing using Postman
-- Manual Functional Testing
-- User Authentication Testing
-- Appointment Booking Testing
-- Database Validation
-- Responsive UI Testing
+- Complete MERN stack application
+- RESTful API architecture
+- JWT authentication system
+- Role-based access control
+- Cloud image upload using Cloudinary
+- Responsive user interface
+- MongoDB database integration
+- Full-stack deployment
 
 ---
 
-11. Screenshots or Demo
+# 🔮 Future Enhancements
 
-Include screenshots of:
-
-
-<img width="960" height="540" alt="Screenshot 2026-07-08 210304" src="https://github.com/user-attachments/assets/57f8a3e6-f24b-4636-9932-f2e91a9bb273" />
-<img width="960" height="540" alt="Screenshot 2026-07-08 210418" src="https://github.com/user-attachments/assets/25c35caf-0438-4fb1-8856-8157216f3177" />
-<img width="960" height="540" alt="Screenshot 2026-07-08 210447" src="https://github.com/user-attachments/assets/45fcb989-1b64-4271-ac48-5ffe6f8d9e21" />
-<img width="960" height="540" alt="Screenshot 2026-07-08 210542" src="https://github.com/user-attachments/assets/b32b0577-c646-47e1-b2d0-130170790547" />
-<img width="960" height="540" alt="Screenshot 2026-07-08 210644" src="https://github.com/user-attachments/assets/ebe01556-feff-4170-8423-93ed780300dc" />
-
-Demo Link:
-
-https://www.linkedin.com/posts/sravani-devarapalli-7324a9360_mernstack-reactjs-nodejs-ugcPost-7479460765289103360-yW0_/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFnGGtYBslSNckV6fbztxqCxEdpCtxRbfGU
+- Online payment integration
+- Video consultation
+- Email/SMS appointment reminders
+- AI-based doctor recommendation
+- Digital prescription management
+- Patient medical history tracking
 
 ---
 
-12. Known Issues
+# 👩‍💻 Author
 
-- Email notifications are not implemented.
-- Appointment reminders are unavailable.
-- Online payment integration is pending.
-- Video consultation feature is not included.
-- Search filtering can be enhanced.
+**Sravani**
 
----
+Computer Science Engineering Student
 
-13. Future Enhancements
+GitHub:
+https://github.com/DevarapalliSravani05
 
-- Online Payment Gateway
-- Video Consultation
-- Email Notifications
-- SMS Appointment Reminders
-- AI-based Doctor Recommendation
-- Medical History Management
-- Prescription Upload
-- Rating and Review System
-- Multi-language Support
-- Mobile Application
-- Real-time Chat between Doctor and Patient
-- Appointment Calendar Integration
+LinkedIn:
+https://linkedin.com/in/sravani-devarapalli-7324a9360
 
 ---
 
-Conclusion
+# ⭐ Support
 
-The Book A Doctor System is a complete MERN Stack healthcare appointment management solution designed to simplify doctor appointment scheduling. It provides secure authentication, efficient appointment management, and role-based access for patients, doctors, and administrators. The project demonstrates the practical implementation of React.js, Node.js, Express.js, MongoDB, REST APIs, and JWT authentication in building a modern full-stack web application.
-
-
+If you like this project, consider giving it a ⭐ on GitHub.
